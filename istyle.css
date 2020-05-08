@@ -1,0 +1,49 @@
+TABLE{
+    border: 2px black solid;
+    height: 400px;
+    width:400px;
+    border-collapse: collapse;
+}
+TD, TR{
+    border:2px black solid;
+    height: 100px;
+    width:100px;
+    padding: 0;
+}
+TD {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+#blankspace{
+    background-color: aqua;
+    border: 4px darkblue solid;
+    color:black;
+}
+h1 
+{
+    color: crimson;
+    font-size: 50px;
+}
+P {
+    font-size: 25px;
+}
+#button1, #button2
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#message {
+    float:right;
+    margin-right: 700px;
+    color: crimson;
+}

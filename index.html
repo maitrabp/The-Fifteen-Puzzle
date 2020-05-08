@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name = "viewport" content = "width-device-width">
+        <link rel = "stylesheet" href="istyle.css">
+        <script type = "text/javascript" src="operations.js"></script>
+        <title>The Fifteen Puzzle</title>
+    </head>
+    <body>
+            <h1> Fifteen Puzzle</h1>
+            <p> <b>Instructions:</b> Click a tile to move it to the open space. Arrange the numbers in-order, to win!</p>
+            <p>Timer: 
+                <span id = "timer">
+                    0
+                </span>
+            </p>
+            <p>Moves: 
+                <span id = "moves">
+                    0
+                </span>
+            </p>
+            <script>
+                var body = document.getElementsByTagName("body")[0];
+                var table = document.createElement("TABLE");
+                var tblB = document.createElement("TBODY");
+                window.onload = function() {
+                    //Get first element of body tag
+                    startTimer();
+                    table.appendChild(tblB);
+                    for(let i = 0; i < 4; i++)
+                    {
+                        //Create rows
+                        var tr = document.createElement("TR");
+                        //Append rows to the body
+                        tblB.appendChild(tr);
+                        //Create cells
+                        
+                         for(let j = 0; j < 4; j++)
+                         {
+                             var td = document.createElement("TD");
+                             //Append cells to the rows
+                             tr.appendChild(td);
+                         }
+                         body.appendChild(table);
+                    }
+
+                    fillTable(table, false);
+                    clickCell(table);
+                    
+                    //NEW GAME BUTTON
+                    var btn = document.createElement("BUTTON");
+                    btn.setAttribute("id", "button1");
+                    btn.innerHTML = "NEW GAME";
+                    document.body.appendChild(btn); 
+                    btn.addEventListener ("click", function() {
+                        fillTable(table, false);
+                    });
+                    btn.addEventListener ("click", function() {
+                        stopTimer();
+                    });
+                    btn.addEventListener ("click", function() {
+                        startTimer();
+                    });
+                    //SIMPLE GAME
+                    var simpGame = document.createElement("BUTTON");
+                    simpGame.setAttribute("id", "button2");
+                    simpGame.innerHTML = "SIMPLE GAME";
+                    document.body.appendChild(simpGame); 
+                    simpGame.addEventListener ("click", function() {
+                        fillTable(table, true);
+                    });
+                    simpGame.addEventListener ("click", function() {
+                        stopTimer();
+                    });
+                    simpGame.addEventListener ("click", function() {
+                        startTimer();
+                    });
+                };
+        </script>
+        <p> <span id=message>  </span></p>
+    </body>
+</html>
